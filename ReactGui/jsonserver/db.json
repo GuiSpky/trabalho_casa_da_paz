@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nome": "Admin",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$Y4/4ws04wYotZQg2RB1bwurp7W6RCq.NLrUEEONlOZEdjLXCVG/LW",
+      "permissoes": "admin"
+    },
+    {
+      "email": "gui@gmail.com",
+      "password": "$2a$10$kGUArbyXXppDeA0YuJ6Us.aXgG7DSTg2Ux9z8BzYXg6iON/HU.2A.",
+      "nome": "Guilherme",
+      "Email": "",
+      "senha": "",
+      "permissoes": "admin",
+      "passowrd": "",
+      "id": 2
+    },
+    {
+      "email": "teste@gmail.com",
+      "password": "$2a$10$3uwU/qIQTKqSzQXhg9BI5eTLu7Dk.IetVLazVfC/OdOFzDBuHbjfC",
+      "nome": "teste",
+      "permissoes": "admin",
+      "id": 3
+    }
+  ]
+}
