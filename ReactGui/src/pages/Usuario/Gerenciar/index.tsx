@@ -47,7 +47,7 @@ export default function GerenciarUsuarios(){
         if(!isNaN(idUser)){
             setIsEdit(true)
 
-            axios.get('http://localhost:3002/users?id'+idUser)
+            axios.get(import.meta.env.VITE_URL+'/users?id'+idUser)
                 .then((res) =>{
                     setValue("nome", res.data[0].nome)
                     setValue("email", res.data[0].email)
@@ -58,7 +58,7 @@ export default function GerenciarUsuarios(){
     }, [id])
 
     const submitForm: SubmitHandler<IForm> = useCallback((data) => {
-        axios.post('http://localhost:3002/users',
+        axios.post(import.meta.env.VITE_URL+'/users',
             data
         )
         .then((res)=>{

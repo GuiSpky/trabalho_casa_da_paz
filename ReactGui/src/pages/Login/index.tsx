@@ -34,7 +34,7 @@ export default function Login() {
             console.log(target.email.value)
             console.log(target.senha.value)
 
-            axios.post('http://localhost:3002/login',
+            axios.post(import.meta.env.VITE_URL+'/login',
                 { 
                     email: target.email.value,
                     password: target.senha.value

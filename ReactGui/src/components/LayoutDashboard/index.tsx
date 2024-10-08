@@ -1,5 +1,7 @@
-import { ReactNode } from "react"
+import { ReactNode, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { IToken } from "../../interfaces/token"
+import { verificaTokenExpirado } from "../../services/token"
 
 
 interface IProps{
@@ -14,6 +16,24 @@ export const LayoutDashboard = (props: IProps) => {
         localStorage.removeItem('meusite.token'); 
         navigate('/')
     }
+    
+    useEffect(()=>{
+        let lsToken = localStorage.getItem('meusite.token')
+
+        let token: IToken | null = null
+
+        if(typeof lsToken === 'string'){
+            token = JSON.parse(lsToken)
+        }
+        
+        if (!token || verificaTokenExpirado(token.accessToken)){
+            navigate('/')
+        }
+
+    }, [])
+
+
+
     return(
         <>
             <header

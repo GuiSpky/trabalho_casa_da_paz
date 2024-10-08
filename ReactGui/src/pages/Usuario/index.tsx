@@ -32,7 +32,7 @@ export default function Usuarios() {
         }
 
         //trazer os usuarios do backend
-        axios.get('http://localhost:3002/users')
+        axios.get(import.meta.env.VITE_URL+'/users')
             .then((resposta) => {
                 console.log(resposta.data)
                 setUsuarios(resposta.data)
