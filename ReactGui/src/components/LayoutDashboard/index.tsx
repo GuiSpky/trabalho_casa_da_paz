@@ -44,7 +44,7 @@ export const LayoutDashboard = (props: IProps) => {
                                 <li className="nav-item">
                                     <Link
                                         className={`nav-link`}
-                                        to={'/dashboard'}
+                                        to={'/'}
                                     >
                                         Inicio
                                     </Link>
