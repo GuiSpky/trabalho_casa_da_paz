@@ -80,10 +80,16 @@ export const LayoutDashboard = (props: IProps) => {
                                     </Link>
                                     <Link
                                         className={`nav-link`}
+                                        to={'/sobrenos'}
+                                    >
+                                        Sobre nós
+                                    </Link>
+                                    {/* <Link
+                                        className={`nav-link`}
                                         to={'/usuarios'}
                                     >
                                         Usuarios
-                                    </Link>
+                                    </Link> */}
                                     <Link
                                         className={`nav-link`}
                                         to={'/voluntario'}
@@ -92,16 +98,16 @@ export const LayoutDashboard = (props: IProps) => {
                                     </Link>
                                     <Link
                                         className={`nav-link`}
-                                        to={'/sobrenos'}
-                                    >
-                                        Sobre nós
-                                    </Link>
-                                    <Link
-                                        className={`nav-link`}
                                         to={'/doador'}
                                     >
                                         Doações
                                     </Link>
+                                    <Link
+                                        className={`nav-link`}
+                                        to={'/galeria'}
+                                    >
+                                        Galeria
+                                        </Link>
                                 </li>
                             </ul>
                         </div>
