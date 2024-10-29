@@ -1,38 +1,11 @@
-import { ReactNode, useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { IToken } from "../../interfaces/token"
-import { verificaTokenExpirado } from "../../services/token"
-
+import { ReactNode} from "react"
+import { Link} from "react-router-dom"
 
 interface IProps{
     children: ReactNode
 }
 
 export const LayoutDashboard = (props: IProps) => {
-    const navigate = useNavigate()
-
-    const Logout = () => {
-        // Remove o token de autenticação do localStorage ou sessionStorage
-        localStorage.removeItem('meusite.token'); 
-        navigate('/')
-    }
-    
-    useEffect(()=>{
-        let lsToken = localStorage.getItem('meusite.token')
-
-        let token: IToken | null = null
-
-        if(typeof lsToken === 'string'){
-            token = JSON.parse(lsToken)
-        }
-        
-        if (!token || verificaTokenExpirado(token.accessToken)){
-            navigate('/')
-        }
-
-    }, [])
-
-
 
     return(
         <>
@@ -41,7 +14,7 @@ export const LayoutDashboard = (props: IProps) => {
             >
                 <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3"
                     href="#">
-                    Sistema Autenticação
+                    Casa da Paz
                 </a>
                 <button
                     className="navbar-toggler position-absolute d-md-none collapsed"
@@ -57,9 +30,6 @@ export const LayoutDashboard = (props: IProps) => {
 
                 <div className="w-100"></div>
                 <div className="navbar-nav">
-                    <div className="nav-item text-nowrap">
-                        <a className="nav-link px-3" onClick={Logout}>Sair</a>
-                    </div>
                 </div>
             </header>
 

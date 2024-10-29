@@ -1,5 +1,7 @@
+import { Carousel } from "react-bootstrap";
 import { LayoutDashboard } from "../../components/LayoutDashboard";
 import { useNavigate } from "react-router-dom";
+import styles from './style.module.css'
 
 
 
@@ -19,6 +21,26 @@ export default function Dashboard() {
                     </div>
                     <div className="card-body content-center">
                         <center>
+
+                        <div>
+                            <Carousel>
+                                <Carousel.Item>
+                                <img
+                                    className={styles.fotos}
+                                    src="src/imagens/DSC_0701.jpg"
+                                    alt="Frente com integrantes da Faculdade"
+                                />
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                <img
+                                    className={styles.fotos}
+                                    src="src/imagens/DSC_0663.jpg"
+                                    alt="Frente sem ninguem"
+                                />
+                                </Carousel.Item>
+                            </Carousel>
+                            </div>
+
                         <p>“Sei que meu trabalho é uma gota no oceano, 
                             mas sem ele, o oceano seria menor" - Santa Teresa de Calcutá</p>
                             <div>

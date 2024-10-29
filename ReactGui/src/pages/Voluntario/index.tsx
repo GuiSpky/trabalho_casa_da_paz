@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { LayoutDashboard } from "../../components/LayoutDashboard";
 import { IToken } from "../../interfaces/token";
 import { verificaTokenExpirado } from "../../services/token";
@@ -44,6 +44,19 @@ export default function Voluntario() {
 
     }, [])
 
+    const submitForm: SubmitHandler<IForm> = useCallback((data) => {
+        axios.post(import.meta.env.VITE_URL+'/voluntarios',
+            data
+        )
+        .then((res)=>{
+            navigate('/voluntario')
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }, [])
+
+
     return(
         <>
            <LayoutDashboard>
@@ -61,6 +74,7 @@ export default function Voluntario() {
 
                         refForm.current.classList.add('was-validated')
 
+                        handleSubmit(submitForm)(event)
                     }}
                     ref={refForm}
                     >
@@ -110,8 +124,4 @@ export default function Voluntario() {
            </LayoutDashboard>
         </>
     )
-}
-
-function register(arg0: string, arg1: { required: string; }): import("react/jsx-runtime").JSX.IntrinsicAttributes & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> {
-    throw new Error("Function not implemented.");
 }
