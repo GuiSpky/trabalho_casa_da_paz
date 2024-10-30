@@ -38,6 +38,13 @@ export default function Dashboard() {
                                     alt="Frente sem ninguem"
                                 />
                                 </Carousel.Item>
+                                <Carousel.Item>
+                                <img
+                                    className={styles.fotos}
+                                    src="src/imagens/Imagem-do-WhatsApp-de-2024-04-15-às-11.54.40_a3bfed76-scaled.jpg"
+                                    alt="Frente sem ninguem"
+                                />
+                                </Carousel.Item>
                             </Carousel>
                             </div>
 

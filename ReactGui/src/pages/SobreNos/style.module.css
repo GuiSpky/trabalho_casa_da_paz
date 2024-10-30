@@ -1,0 +1,23 @@
+.fotos{
+    width: 50%;
+}
+
+.foto1{
+    float:left;
+    width:200px
+}
+
+.foto2{
+    float:right;
+    width:200px
+}
+
+/* .foto1{
+    float:left;
+    width:200px
+}
+
+.foto1{
+    float:left;
+    width:200px
+} */
