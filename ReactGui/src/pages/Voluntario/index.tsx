@@ -23,27 +23,6 @@ export default function Voluntario() {
     
     const navigate = useNavigate()
 
-    const handleLogout = () => {
-        // Remove o token de autenticação do localStorage ou sessionStorage
-        localStorage.removeItem('meusite.token'); 
-        navigate('/')
-}
-
-    useEffect(()=>{
-        let lsToken = localStorage.getItem('meusite.token')
-
-        let token: IToken | null = null
-
-        if(typeof lsToken === 'string'){
-            token = JSON.parse(lsToken)
-        }
-        
-        if (!token || verificaTokenExpirado(token.accessToken)){
-            navigate('/')
-        }
-
-    }, [])
-
     const submitForm: SubmitHandler<IForm> = useCallback((data) => {
         axios.post(import.meta.env.VITE_URL+'/voluntarios',
             data
