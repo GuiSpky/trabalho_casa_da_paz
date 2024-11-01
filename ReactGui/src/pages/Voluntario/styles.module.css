@@ -1,0 +1,44 @@
+.centeredText {
+    text-align: center;
+    margin-bottom: 1.5rem; /* Espaçamento abaixo do título */
+}
+
+.centeredText h1 {
+    margin: 0; /* Remove a margem padrão do h1 */
+    font-size: 2rem; /* Ajusta o tamanho da fonte, se necessário */
+}
+
+.centeredText p {
+    margin: 0; /* Remove a margem padrão do parágrafo */
+    font-size: 1.2rem; /* Ajusta o tamanho da fonte, se necessário */
+    color: #555; /* Cor do texto, pode ser ajustada */
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.formGroup label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+    border-radius: 5px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.invalid-feedback {
+    display: block;
+    color: red;
+    font-size: 0.875rem;
+}
