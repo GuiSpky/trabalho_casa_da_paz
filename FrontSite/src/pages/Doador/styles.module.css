@@ -1,0 +1,28 @@
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.formGroup label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    border-radius: 5px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.btn {
+    margin-top: 1rem;
+}

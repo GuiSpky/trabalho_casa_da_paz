@@ -1,106 +1,114 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useRef } from "react";
+import styles from './styles.module.css';
 import { LayoutDashboard } from "../../components/LayoutDashboard";
-import { IToken } from "../../interfaces/token";
-import { verificaTokenExpirado } from "../../services/token";
 import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
 
 interface IForm {
-    nome: string
-    email: string
+    nome: string;
+    email: string;
+    telefone: string;
+    endereco: string;
+    habilidades: string;
 }
 
 export default function Voluntario() {
-
-    const{
+    const {
         register,
         handleSubmit,
-        formState: {errors}
-    } = useForm<IForm>()
+        formState: { errors }
+    } = useForm<IForm>();
 
-    const refForm = useRef<any>()
-    
-    const navigate = useNavigate()
+    const refForm = useRef<any>();
+    const navigate = useNavigate();
 
     const submitForm: SubmitHandler<IForm> = useCallback((data) => {
-        axios.post(import.meta.env.VITE_URL+'/voluntarios',
-            data
-        )
-        .then((res)=>{
-            navigate('/voluntario')
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
-    }, [])
+        axios.post(import.meta.env.VITE_URL + '/voluntarios', data)
+            .then((res) => {
+                navigate('/voluntario');
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, [navigate]);
 
-
-    return(
+    return (
         <>
-           <LayoutDashboard>
-                <h1>Voluntários</h1>
-                <p>Seja um Voluntário</p>
+            <LayoutDashboard>
+                <div className={styles.centeredText}>
+                    <h1>Voluntários</h1>
+                    <p>Seja um Voluntário</p>
+                </div>
 
                 <form
                     className="row g-3 needs-validation mb-3"
                     noValidate
-                    style={{
-                        alignItems:'center'
-                    }}
-                    onSubmit={(event: React.FormEvent<HTMLFormElement>)=>{
+                    onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
                         event.preventDefault();
-
-                        refForm.current.classList.add('was-validated')
-
-                        handleSubmit(submitForm)(event)
+                        refForm.current.classList.add('was-validated');
+                        handleSubmit(submitForm)(event);
                     }}
                     ref={refForm}
-                    >
-                        <div
-                            className="coll-md-12">
-                            <label htmlFor="nome"
-                            className="form-label">
-                               Nome 
-                            </label>
-                            <input type="text" 
+                >
+                    <div className={styles.formGroup}>
+                        <label htmlFor="nome" className="form-label">Nome</label>
+                        <input type="text"
                             className="form-control"
-                            placeholder="Dephay"
+                            placeholder="Nome completo"
                             id="nome"
                             required
-                            {...register('nome',
-                                {required: 'Nome é obrigatório'}
-                            )}/>
-                            <div className="invalid-feedback">
-                                {errors.nome && errors.nome.message}
-                            </div>
+                            {...register('nome', { required: 'Nome é obrigatório' })} />
+                        <div className="invalid-feedback">
+                            {errors.nome && errors.nome.message}
                         </div>
-                        <div
-                            className="coll-md-12">
-                            <label htmlFor="email"
-                            className="form-label">
-                               Email 
-                            </label>
-                            <input type="email" 
+                    </div>
+
+                    <div className={styles.formGroup}>
+                        <label htmlFor="telefone" className="form-label">Telefone</label>
+                        <input type="tel"
                             className="form-control"
-                            placeholder="email@exemplo.com"
-                            id="email"
+                            placeholder="(44) 12354-9582"
+                            id="telefone"
                             required
-                            {...register('email',
-                                {required: 'Email é obrigatório'}
-                            )}/>
-                            <div className="invalid-feedback">
-                                {errors.email && errors.email.message}
-                            </div>
+                            {...register('telefone', { required: 'Telefone é obrigatório' })} />
+                        <div className="invalid-feedback">
+                            {errors.telefone && errors.telefone.message}
                         </div>
+                    </div>
+
+                    <div className={styles.formGroup}>
+                        <label htmlFor="endereco" className="form-label">Endereço</label>
+                        <input type="text"
+                            className="form-control"
+                            placeholder="Rua, Número, Bairro"
+                            id="endereco"
+                            required
+                            {...register('endereco', { required: 'Endereço é obrigatório' })} />
+                        <div className="invalid-feedback">
+                            {errors.endereco && errors.endereco.message}
+                        </div>
+                    </div>
+
+                    <div className={styles.formGroup}>
+                        <label htmlFor="habilidades" className="form-label">Cite suas habilidades</label>
+                        <textarea
+                            className="form-control"
+                            placeholder="Diga seu forte, a área que você possui mais desenvolvimento, o que pode fazer para colaborar conosco."
+                            id="habilidades"
+                            rows={3}
+                            required
+                            {...register('habilidades', { required: 'Habilidades são obrigatórias' })}></textarea>
+                        <div className="invalid-feedback">
+                            {errors.habilidades && errors.habilidades.message}
+                        </div>
+                    </div>
+
                     <div className="col-md-12">
-                        <button
-                            type="submit"
-                            className="btn btn-success"
-                        >Salvar</button>
+                        <button type="submit" className="btn btn-success">Enviar</button>
                     </div>
                 </form>
-           </LayoutDashboard>
+            </LayoutDashboard>
         </>
-    )
+    );
 }
