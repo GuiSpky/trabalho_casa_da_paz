@@ -26,21 +26,14 @@ export default function Dashboard() {
                                 <Carousel.Item>
                                 <img
                                     className={styles.fotos}
-                                    src="src/imagens/DSC_0701.jpg"
+                                    src="public/imagens/DSC_0701.jpg"
                                     alt="Frente com integrantes da Faculdade"
                                 />
                                 </Carousel.Item>
                                 <Carousel.Item>
                                 <img
                                     className={styles.fotos}
-                                    src="src/imagens/DSC_0663.jpg"
-                                    alt="Frente sem ninguem"
-                                />
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                <img
-                                    className={styles.fotos}
-                                    src="src/imagens/Imagem-do-WhatsApp-de-2024-04-15-às-11.54.40_a3bfed76-scaled.jpg"
+                                    src="public/imagens/Imagem-do-WhatsApp-de-2024-04-15-às-11.54.40_a3bfed76-scaled.jpg"
                                     alt="Frente sem ninguem"
                                 />
                                 </Carousel.Item>
