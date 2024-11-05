@@ -36,12 +36,16 @@ export default function Voluntario() {
     return (
         <>
             <LayoutDashboard>
-                <div className={styles.centeredText}>
+            <div className="container">
+                 <div className="card">
+                    <div className="card-header content-center">
+
+                    <div className={styles.centeredText}>
                     <h1>Voluntários</h1>
                     <p>Seja um Voluntário</p>
                 </div>
-
-                <form
+                    <div className="card-body">
+                    <form
                     className="row g-3 needs-validation mb-3"
                     noValidate
                     onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
@@ -108,6 +112,13 @@ export default function Voluntario() {
                         <button type="submit" className="btn btn-success">Enviar</button>
                     </div>
                 </form>
+
+                    </div>
+               
+                    </div>
+                </div>
+            </div>
+                
             </LayoutDashboard>
         </>
     );
