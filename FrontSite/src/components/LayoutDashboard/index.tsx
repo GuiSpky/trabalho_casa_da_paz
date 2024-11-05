@@ -93,17 +93,15 @@ export const LayoutDashboard = (props: IProps) => {
 
                 </div>
             </div>
-            <footer
+            <div 
                 className="navbar navbar-dark sticky-bottom bg-dark flex-md-nowrap p-0"
-            >
-            <div>
+                >
             <center>
             <a href="https://www.instagram.com/casadapaz_umuarama/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"></img></a>
             {/* <a href = "mailto:guii0410@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></img></a> */}
             {/* <a href="https://www.linkedin.com/in/guilhermefernandesdesouza/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"></img></a>    */}
             </center>
             </div>
-            </footer>
         </>
     )
 }

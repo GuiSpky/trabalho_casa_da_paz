@@ -1,6 +1,4 @@
-import { Carousel } from "react-bootstrap"
 import { LayoutDashboard } from "../../components/LayoutDashboard"
-import styles from './style.module.css'
 
 
 export default function Galeria() {
