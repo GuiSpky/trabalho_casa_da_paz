@@ -48,11 +48,8 @@ export default function Voluntario() {
                     <form
                     className="row g-3 needs-validation mb-3"
                     noValidate
-                    onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
-                        event.preventDefault();
-                        refForm.current.classList.add('was-validated');
-                        handleSubmit(submitForm)(event);
-                    }}
+                    action="127.0.0.1:8000/criarVoluntario"
+                    method="POST"
                     ref={refForm}
                 >
                     <div className={styles.formGroup}>

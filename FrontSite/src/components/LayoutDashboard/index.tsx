@@ -93,9 +93,17 @@ export const LayoutDashboard = (props: IProps) => {
 
                 </div>
             </div>
-            <div 
-                className="navbar navbar-dark sticky-bottom bg-dark flex-md-nowrap p-0"
-                >
+            <div style={{
+                position: 'fixed',
+                bottom: '0',
+                left: '0',
+                width: '100%',
+                backgroundColor: '#333',
+                color: 'white',
+                textAlign: 'center',
+                padding: '10px',
+                fontSize: '16px'
+            }}>
             <center>
             <a href="https://www.instagram.com/casadapaz_umuarama/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"></img></a>
             {/* <a href = "mailto:guii0410@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></img></a> */}

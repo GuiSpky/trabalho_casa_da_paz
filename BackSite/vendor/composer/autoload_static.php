@@ -126,6 +126,7 @@ class ComposerStaticInit589cc0f65c3aaa7d4e9024d545bc1974
             'Laravel\\Sail\\' => 13,
             'Laravel\\Prompts\\' => 16,
             'Laravel\\Pail\\' => 13,
+            'Laravel\\Breeze\\' => 15,
         ),
         'I' => 
         array (
@@ -413,6 +414,10 @@ class ComposerStaticInit589cc0f65c3aaa7d4e9024d545bc1974
         array (
             0 => __DIR__ . '/..' . '/laravel/pail/src',
         ),
+        'Laravel\\Breeze\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/breeze/src',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
@@ -658,6 +663,7 @@ class ComposerStaticInit589cc0f65c3aaa7d4e9024d545bc1974
         'DeepCopy\\Matcher\\PropertyTypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Matcher/PropertyTypeMatcher.php',
         'DeepCopy\\Reflection\\ReflectionHelper' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Reflection/ReflectionHelper.php',
         'DeepCopy\\TypeFilter\\Date\\DateIntervalFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Date/DateIntervalFilter.php',
+        'DeepCopy\\TypeFilter\\Date\\DatePeriodFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Date/DatePeriodFilter.php',
         'DeepCopy\\TypeFilter\\ReplaceFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/ReplaceFilter.php',
         'DeepCopy\\TypeFilter\\ShallowCopyFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/ShallowCopyFilter.php',
         'DeepCopy\\TypeFilter\\Spl\\ArrayObjectFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/ArrayObjectFilter.php',
@@ -2833,6 +2839,12 @@ class ComposerStaticInit589cc0f65c3aaa7d4e9024d545bc1974
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
+        'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
+        'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',
+        'Laravel\\Breeze\\Console\\InstallsBladeStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsBladeStack.php',
+        'Laravel\\Breeze\\Console\\InstallsInertiaStacks' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsInertiaStacks.php',
+        'Laravel\\Breeze\\Console\\InstallsLivewireStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsLivewireStack.php',
         'Laravel\\Pail\\Console\\Commands\\PailCommand' => __DIR__ . '/..' . '/laravel/pail/src/Console/Commands/PailCommand.php',
         'Laravel\\Pail\\Contracts\\Printer' => __DIR__ . '/..' . '/laravel/pail/src/Contracts/Printer.php',
         'Laravel\\Pail\\File' => __DIR__ . '/..' . '/laravel/pail/src/File.php',
