@@ -18,7 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Arquivar foto
-    Route::get('/foto/create', [FotosController::class, 'store'])->name('foto.store');
+    Route::get('/foto', [FotosController::class, 'create'])->name('foto.create');
+    Route::post('/foto', [FotosController::class, 'store'])->name('foto.store');
 });
 
 require __DIR__.'/auth.php';

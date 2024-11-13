@@ -20,7 +20,7 @@ class FotosController extends Controller
      */
     public function create()
     {
-        //
+        return view('foto.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class FotosController extends Controller
         }
 
         Fotos::create($dados);
-        return redirect('/dashboard');
+        return redirect('/foto');
     }
 
     /**

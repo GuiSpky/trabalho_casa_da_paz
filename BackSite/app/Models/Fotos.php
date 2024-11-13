@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fotos extends Model
 {
-    protected $fillable = ['rotaArquivo'];
+    protected $fillable = ['foto'];
 
 }
