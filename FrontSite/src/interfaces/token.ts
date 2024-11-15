@@ -7,3 +7,7 @@ export interface IToken {
         permissoes: string
     }
 }
+
+export interface IFotos {
+    foto: string
+}

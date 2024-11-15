@@ -29,7 +29,7 @@ app.get('/api/test', (req, res) => {
 
 // Rota para buscar dados
 app.get('/api/fotos', (req, res) => {
-  const query = 'SELECT "foto" FROM fotos'; // Ajuste a tabela conforme necessário
+  const query = 'SELECT * FROM fotos'; // Ajuste a tabela conforme necessário
   db.query(query, (err, result) => {
     if (err) {
       res.status(500).send(err);

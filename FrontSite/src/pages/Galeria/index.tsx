@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 export default function Galeria() {
 
-
     const [fotos, setFotos] = useState([]);
 
   useEffect(() => {
@@ -18,6 +17,7 @@ export default function Galeria() {
         console.error('Erro ao buscar usuários:', error);
       });
   }, []);
+
 
     return(
         <>
@@ -33,11 +33,12 @@ export default function Galeria() {
                     </center>
                     
                     <div className="row g-3 mt-4">
-                        {fotos.map((rotaArquivo) => (
-                            <div className="col-12 col-sm-6 col-md-3">
+                        {fotos.map((rotaArquivo, index) => (
+                            <div className="col-12 col-sm-6 col-md-3" key={index}>
                                 <div className="card border-0">
                                     <img
-                                        src={"http://127.0.0.1:8000/storage/" + rotaArquivo}
+                                        src={`http://localhost:3030/storage/app/public/${rotaArquivo}`}
+                                        alt={rotaArquivo}
                                         className="img-fluid rounded shadow-sm"
                                         style={{ maxHeight: "300px", objectFit: "cover" }}
                                     />
