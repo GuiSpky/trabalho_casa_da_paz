@@ -1,21 +1,23 @@
+import axios from "axios";
 import { LayoutDashboard } from "../../components/LayoutDashboard"
+import { useEffect, useState } from "react";
 
 
 export default function Galeria() {
 
-    const images = [
-        "public/imagens/galeriaEventos/DSC_0431 (1).jpg",
-        "public/imagens/galeriaEventos/DSC_0433.jpg",
-        "public/imagens/galeriaEventos/DSC_0559.jpg",
-        "public/imagens/galeriaEventos/DSC_0650.jpg"
-    ];
 
-    const imagesAniversario = [
-        "public/imagens/niver_junho/Imagem-do-WhatsApp-de-2024-08-06-às-08.18.36_5c20041b-1.jpg",
-        "public/imagens/niver_junho/Imagem-do-WhatsApp-de-2024-08-06-às-08.18.36_4668644d-1.jpg",
-        "public/imagens/niver_junho/Imagem-do-WhatsApp-de-2024-08-06-às-08.18.36_c6336698.jpg",
-        "public/imagens/niver_junho/Imagem-do-WhatsApp-de-2024-08-06-às-08.18.37_8995dc89.jpg"
-    ]
+    const [fotos, setFotos] = useState([]);
+
+  useEffect(() => {
+    // Fazendo requisição ao backend
+    axios.get('http://localhost:3001/api/fotos')
+      .then(response => {
+        setFotos(response.data);
+      })
+      .catch(error => {
+        console.error('Erro ao buscar usuários:', error);
+      });
+  }, []);
 
     return(
         <>
@@ -27,34 +29,15 @@ export default function Galeria() {
                     </p>
 
                     <center>
-                        <h1>Aniversáriantes de Junho</h1>
+                        <h1>Aulas e Eventos</h1>
                     </center>
                     
                     <div className="row g-3 mt-4">
-                        {imagesAniversario.map((src, index) => (
-                            <div className="col-12 col-sm-6 col-md-3" key={index}>
+                        {fotos.map((rotaArquivo) => (
+                            <div className="col-12 col-sm-6 col-md-3">
                                 <div className="card border-0">
                                     <img
-                                        src={src}
-                                        alt={`Imagem ${index + 1}`}
-                                        className="img-fluid rounded shadow-sm"
-                                        style={{ maxHeight: "300px", objectFit: "cover" }}
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-<br />
-                    <center>
-                    <h1>Aulas e Eventos</h1>
-                    </center>
-                    <div className="row g-3 mt-4">
-                        {images.map((src, index) => (
-                            <div className="col-12 col-sm-6 col-md-4" key={index}>
-                                <div className="card border-0">
-                                    <img
-                                        src={src}
-                                        alt={`Imagem ${index + 1}`}
+                                        src={"http://127.0.0.1:8000/storage/" + rotaArquivo}
                                         className="img-fluid rounded shadow-sm"
                                         style={{ maxHeight: "300px", objectFit: "cover" }}
                                     />

@@ -10,7 +10,7 @@
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{route('dashboard')}}">E/code</a>
+            <a class="navbar-brand" href="{{route('dashboard')}}">Painel Casa da Paz</a>
         </div>
     </nav>
 

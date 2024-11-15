@@ -28,6 +28,7 @@ class FotosController extends Controller
      */
     public function store(Request $request)
     {
+
         $dados = $request->except('_token');
         if($request->hasFile('foto') && $request->file('foto')->isValid()){
             $capaPath = $request->file('foto')->store('foto', 'public');
