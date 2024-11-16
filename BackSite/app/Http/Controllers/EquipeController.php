@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fotos;
+use App\Models\Equipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class FotosController extends Controller
+
+class EquipeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $fotos = Fotos::get();
-        return view('foto.index', [
-            'fotos' => $fotos,
+        $equipes = Equipe::get();
+        return view('equipe.index', [
+            'equipes' => $equipes
         ]);
     }
 
@@ -24,7 +25,7 @@ class FotosController extends Controller
      */
     public function create()
     {
-        return view('foto.create');
+        return view('equipe.create');
     }
 
     /**
@@ -32,17 +33,16 @@ class FotosController extends Controller
      */
     public function store(Request $request)
     {
-
         $dados = $request->except('_token');
         if($request->hasFile('foto') && $request->file('foto')->isValid()){
-            $capaPath = $request->file('foto')->store('foto', 'public');
+            $capaPath = $request->file('foto')->store('equipe', 'public');
             // $url = Storage::url($capaPath);
             $dados['foto'] = $capaPath;
         }
 
-        Fotos::create($dados);
+        Equipe::create($dados);
         // dd($url);
-        return redirect('/foto');
+        return redirect('/equipe');
     }
 
     /**
@@ -74,7 +74,7 @@ class FotosController extends Controller
      */
     public function destroy(string $id)
     {
-        $fotos = Fotos::find($id);
+        $fotos = Equipe::find($id);
         if($fotos->foto){
             Storage::disk('public')->delete($fotos->foto);
         }

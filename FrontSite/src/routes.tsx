@@ -9,6 +9,7 @@ import Voluntario from './pages/Voluntario'
 import SobreNos from './pages/SobreNos'
 import Doador from './pages/Doador'
 import Galeria from './pages/Galeria'
+import Equipe from './pages/Equipe'
 
 export const Rotas = () => {
     return (
@@ -34,6 +35,10 @@ export const Rotas = () => {
                 <Route
                     path='/galeria'
                     element={<Galeria/>}
+                    />
+                <Route
+                    path='/equipe'
+                    element={<Equipe/>}
                     />
             </Routes>
         </BrowserRouter>

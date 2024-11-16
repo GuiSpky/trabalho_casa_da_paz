@@ -39,6 +39,19 @@ app.get('/api/fotos', (req, res) => {
   });
 });
 
+app.get('/api/equipe', (req, res) => {
+  const query = 'SELECT * FROM equipes'; // Ajuste a tabela conforme necessário
+  db.query(query, (err, result) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+
+
 // Iniciar servidor
 const PORT = 3001;
 app.listen(PORT, () => {

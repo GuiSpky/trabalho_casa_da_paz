@@ -54,12 +54,12 @@ export const LayoutDashboard = (props: IProps) => {
                                     >
                                         Sobre nós
                                     </Link>
-                                    {/* <Link
+                                    <Link
                                         className={`nav-link`}
-                                        to={'/usuarios'}
+                                        to={'/equipe'}
                                     >
-                                        Usuarios
-                                    </Link> */}
+                                        Equipe
+                                    </Link>
                                     <Link
                                         className={`nav-link`}
                                         to={'/voluntario'}
