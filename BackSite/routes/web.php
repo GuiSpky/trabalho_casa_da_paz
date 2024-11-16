@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\FotosController;
+use App\Http\Controllers\PainelControlle;
 use App\Http\Controllers\ProfileController;
 use App\Models\Equipe;
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,7 +13,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('inicio.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -30,6 +32,9 @@ Route::middleware('auth')->group(function () {
     Route::get('equipe/criar',[EquipeController::class, 'create'])->name('equipe.create');
     Route::post('/equipe', [EquipeController::class, 'store'])->name('equipe.store');
     Route::delete('/equipe/{id}', [EquipeController::class, 'destroy'])->name('equipe.destroy');
+
+    // Rota de inicio
+    Route::get('/inicio', [PainelControlle::class, 'index'])->name('incio.index');
 });
 
 require __DIR__.'/auth.php';

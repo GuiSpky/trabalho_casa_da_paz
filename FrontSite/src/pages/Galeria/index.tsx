@@ -34,12 +34,12 @@ export default function Galeria() {
                     </center>
                     
                     <div className="row g-3 mt-4">
-                        {fotos.map((rotaArquivo, index) => (
+                        {fotos.map((dados, index) => (
                             <div className="col-12 col-sm-6 col-md-3" key={index}>
                                 <div className="card border-0">
                                     <img
-                                        src={'http://127.0.0.1:8000/storage/'+rotaArquivo.foto}
-                                        alt={rotaArquivo.foto}
+                                        src={'http://127.0.0.1:8000/storage/'+dados.foto}
+                                        alt={dados.foto}
                                         className="img-fluid rounded shadow-sm"
                                         style={{ maxHeight: "300px", objectFit: "cover" }}
                                     />
