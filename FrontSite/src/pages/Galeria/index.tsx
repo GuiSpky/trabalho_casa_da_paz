@@ -2,10 +2,13 @@ import axios from "axios";
 import { LayoutDashboard } from "../../components/LayoutDashboard"
 import { useEffect, useState } from "react";
 
+interface Dados {
+    foto: string;
+  }
 
 export default function Galeria() {
 
-    const [fotos, setFotos] = useState([]);
+    const [fotos, setFotos] = useState<Dados[]>([]);
 
   useEffect(() => {
     // Fazendo requisição ao backend
