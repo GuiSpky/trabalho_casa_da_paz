@@ -7,13 +7,13 @@
 <table class="table">
 
     <tr>
-    <td><button class="btn btn-success" href="{{ route('foto.create') }}">Adicionar foto</button></td>
+    <td><a class="btn btn-success" href="{{ route('foto.create') }}">Adicionar foto</a></td>
     </tr>
     <tr>
-        <td><button class="btn btn-success" href="{{ route('foto.index') }}">Gerencias fotos</button></td>
+        <td><a class="btn btn-success" href="{{ route('foto.index') }}">Gerencias fotos</a></td>
     </tr>
     <tr>
-    <td><button class="btn btn-success" href="{{ route('equipe.index') }}">Gerenciar equipe</button></td>
+    <td><a class="btn btn-success" href="{{ route('equipe.index') }}">Gerenciar equipe</a></td>
     </tr>
 
     </tbody>
