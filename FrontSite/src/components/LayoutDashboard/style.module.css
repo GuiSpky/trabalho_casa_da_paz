@@ -1,0 +1,71 @@
+/* style.module.css */
+
+/* Barra de navegação superior */
+.header {
+    background-color: #333;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center; /* Centraliza os links horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+    position: fixed; /* Torna o header fixo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que o header fique acima do conteúdo */
+    height: 60px; /* Define a altura do header */
+  }
+  
+  /* Container dos links de navegação no topo */
+  .navLinksContainer {
+    display: flex;
+    gap: 15px; /* Distância entre os botões */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza os botões verticalmente */
+  }
+  
+  /* Estilo de cada link */
+  .navLink {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Efeito hover nos links */
+  .navLink:hover {
+    background-color: #555;
+    border-radius: 5px;
+  }
+  
+  /* Rodapé fixo */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Centraliza o conteúdo principal */
+  .mainContent {
+    display: flex;
+    justify-content: center; /* Alinha o conteúdo horizontalmente no centro */
+    align-items: flex-start; /* Alinha o conteúdo no topo */
+    min-height: calc(100vh - 60px - 40px); /* Ocupa o restante da altura da tela, considerando o header e o rodapé */
+    padding: 20px;
+    margin-top: 60px; /* Adiciona um espaçamento no topo para evitar que o conteúdo fique sob o header fixo */
+    justify-content: flex-start;
+  }
+  
+  /* Ajuste para o container de conteúdo */
+  .mainContainer {
+    width: 80%; /* Define a largura do conteúdo */
+    max-width: 1200px; /* Limita a largura máxima */
+    
+  }
+  

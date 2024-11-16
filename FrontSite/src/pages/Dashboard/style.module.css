@@ -2,3 +2,32 @@
     width: 70%;
     
 }
+
+/* Estilos para os botões no topo */
+.topButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-bottom: 20px; /* Espaçamento abaixo dos botões */
+}
+
+/* Estilo para os botões */
+.topButtons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Responsividade - Ajuste para telas menores */
+@media (max-width: 768px) {
+    .topButtons {
+        flex-direction: column; /* Empilhar os botões verticalmente em telas pequenas */
+        align-items: center;
+    }
+
+    .topButtons button {
+        width: 100%; /* Fazer os botões ocuparem toda a largura em telas pequenas */
+        margin-bottom: 10px; /* Espaçamento entre os botões */
+    }
+}
